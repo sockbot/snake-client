@@ -15,9 +15,9 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('Connection established');
     conn.write('Name: AJC');
-    setInterval(() => {
-      conn.write('Move: up');
-    }, 50)
+    // setInterval(() => {
+    //   conn.write('Move: up');
+    // }, 50)
   });
 
   return conn;
