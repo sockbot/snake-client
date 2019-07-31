@@ -12,6 +12,11 @@ const connect = function() {
     console.log('Message from server: ', serverMessage)
   })
 
+  conn.on('connect', () => {
+    console.log('Connection established');
+    conn.write('Name: AJC');
+  });
+
   return conn;
 };
 
