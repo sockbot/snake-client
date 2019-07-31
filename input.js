@@ -6,9 +6,9 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
-  stdin.on('data', handleUserInput)
+  stdin.on('data', handleUserInput);
   return stdin;
-}
+};
 
 const handleUserInput = function(key) {
   if (key === '\u0003') {
@@ -31,10 +31,11 @@ const handleUserInput = function(key) {
     connection.write('Move: right');
   }
 
-}
-
-// setupInput(handleUserInput);
+  if (key === 'y') {
+    connection.write("Say: ALL YOUR BASE");
+  }
+};
 
 module.exports = {
   setupInput,
-}
+};
